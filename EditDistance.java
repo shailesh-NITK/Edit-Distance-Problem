@@ -8,17 +8,17 @@ class EditDistance{
 	
 	void convertPrint(String s1, String s2){
 		for(int i=l1,j=l2; i>0 && j>0;i--,j--){
-				if(s1.charAt(i-1)!=s2.charAt(j-1)){
-					if(T[i-1][j]< T[i-1][j-1] && T[i-1][j]<T[i][j-1]){
-						System.out.println("Remove->" + s1.charAt(i-1));
-						j++;
-					}
-					else if(T[i][j-1]<T[i-1][j-1] && T[i][j-1]<T[i-1][j]){
-						System.out.println("Insert->" + s1.charAt(i-1));
-					}else{
-						System.out.println("Replace->" + s1.charAt(i-1) + " " + s2.charAt(j-1));
-					}
+			if(s1.charAt(i-1)!=s2.charAt(j-1)){
+				if(T[i-1][j]< T[i-1][j-1] && T[i-1][j]<T[i][j-1]){
+					System.out.println("Remove->" + s1.charAt(i-1));
+					j++;
 				}
+				else if(T[i][j-1]<T[i-1][j-1] && T[i][j-1]<T[i-1][j]){
+					System.out.println("Insert->" + s1.charAt(i-1));
+				}else{
+					System.out.println("Replace->" + s1.charAt(i-1) + " " + s2.charAt(j-1));
+				}
+			}
 		}
 	}
 	
